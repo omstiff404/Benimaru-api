@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/**/*.js", "use": "@vercel/node" },
+    { "src": "public/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/api/media", "dest": "/api/media.js" },
+    { "src": "/api/file/(?<id>[^/]+)", "dest": "/api/file/[id].js?id=$id" },
+    { "src": "/api/admin/login", "dest": "/api/admin/login.js" },
+    { "src": "/api/admin/settings", "dest": "/api/admin/settings.js" },
+    { "src": "/api/admin/music", "dest": "/api/admin/music.js" },
+    { "src": "/api/admin/upload", "dest": "/api/admin/upload.js" },
+    { "src": "/admin", "dest": "/public/admin.html" },
+    { "src": "/admin.html", "dest": "/public/admin.html" },
+    { "src": "/(.*)", "dest": "/public/$1" }
+  ]
+}

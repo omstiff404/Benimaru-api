@@ -1,0 +1,31 @@
+{
+  "name": "benimaru-api",
+  "version": "2.5.0",
+  "description": "Benimaru API — scrapers + media profile (avatar/video/music) + admin",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "api",
+    "downloader",
+    "tiktok",
+    "youtube",
+    "instagram",
+    "nodejs",
+    "vercel",
+    "aiven"
+  ],
+  "author": "Omstiff404",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "axios": "^1.7.0",
+    "cheerio": "^1.0.0",
+    "pg": "^8.13.0"
+  }
+}
