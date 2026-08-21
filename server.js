@@ -12,19 +12,35 @@ import {
 } from './scrapers/multiDl.js';
 import { getMediaInfo } from './scrapers/ytdlp.js';
 import * as tools from './scrapers/tools.js';
-import {
-  handlePublicMedia,
-  handleFile,
-  handleAdminLogin,
-  handleAdminSettings,
-  handleAdminMusic,
-  handleAdminUpload,
-} from './lib/mediaApi.js';
 import config from './config.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PORT = config.PORT || process.env.PORT || 3000;
 const STATIC = path.join(__dirname, 'public');
+const MUSIC_DIR = path.join(STATIC, 'music');
+const AUDIO_EXT = new Set(['.mp3', '.ogg', '.wav', '.m4a', '.aac', '.flac', '.opus', '.webm']);
+
+/** Scan public/music — otomatis, tanpa playlist.json */
+function listMusicFiles() {
+  try {
+    if (!fs.existsSync(MUSIC_DIR)) return [];
+    return fs
+      .readdirSync(MUSIC_DIR)
+      .filter((f) => AUDIO_EXT.has(path.extname(f).toLowerCase()))
+      .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }))
+      .map((f) => {
+        const base = path.basename(f, path.extname(f));
+        return {
+          title: base.replace(/[_-]+/g, ' ').trim() || f,
+          artist: '',
+          url: '/music/' + encodeURIComponent(f),
+          file: 'music/' + f,
+        };
+      });
+  } catch {
+    return [];
+  }
+}
 
 /** AM Account (Prem / Verif) — upstream: api.nexadev.my.id */
 const AM_API_KEY = config.AM_API_KEY || process.env.AM_API_KEY || 'RS-9J^q$1gF';
@@ -307,10 +323,19 @@ const MIME = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
   '.js': 'application/javascript; charset=utf-8',
+  '.json': 'application/json; charset=utf-8',
   '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
   '.png': 'image/png',
   '.svg': 'image/svg+xml',
   '.webp': 'image/webp',
+  '.mp3': 'audio/mpeg',
+  '.ogg': 'audio/ogg',
+  '.wav': 'audio/wav',
+  '.m4a': 'audio/mp4',
+  '.mp4': 'video/mp4',
+  '.webm': 'video/webm',
+  '.mov': 'video/quicktime',
 };
 
 function staticFile(res, pathname) {
@@ -341,26 +366,11 @@ const server = http.createServer(async (req, res) => {
     return sendJSON(res, 200, { status: true, version: '2.4.0', mode: 'stable-only' });
   }
 
-  // —— Media profile (avatar / video / musik) ——
-  if (pathname === '/api/media') {
-    return handlePublicMedia(req, res);
+  // Playlist otomatis dari folder public/music/
+  if (pathname === '/api/playlist') {
+    return sendJSON(res, 200, listMusicFiles());
   }
-  if (pathname.startsWith('/api/file/')) {
-    const id = pathname.replace('/api/file/', '').split('/')[0];
-    return handleFile(req, res, id);
-  }
-  if (pathname === '/api/admin/login') {
-    return handleAdminLogin(req, res);
-  }
-  if (pathname === '/api/admin/settings') {
-    return handleAdminSettings(req, res);
-  }
-  if (pathname === '/api/admin/music') {
-    return handleAdminMusic(req, res);
-  }
-  if (pathname === '/api/admin/upload') {
-    return handleAdminUpload(req, res);
-  }
+
   if (pathname === '/api/endpoints') {
     return sendJSON(res, 200, {
       version: '2.4.0',

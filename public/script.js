@@ -25,11 +25,12 @@ burger?.addEventListener('click', openSidebar);
 closeSidebar?.addEventListener('click', closeSidebarFn);
 overlay?.addEventListener('click', closeSidebarFn);
 
-// Navigation
+// Navigation (skip external links like admin.html)
 navItems.forEach(item => {
   item.addEventListener('click', (e) => {
-    e.preventDefault();
     const target = item.dataset.page;
+    if (!target) return; // Admin Login dll — navigasi normal
+    e.preventDefault();
     navItems.forEach(n => n.classList.remove('active'));
     item.classList.add('active');
     pages.forEach(p => p.classList.remove('active'));
@@ -424,25 +425,32 @@ document.getElementById('themeBtn')?.addEventListener('click', () => {
 
   drawIdle();
 
-  fetch(API_BASE + '/api/media')
-    .then((r) => r.json())
-    .then((data) => {
-      if (!data) return;
-      if (data.avatar_url && avatar) avatar.src = data.avatar_url;
-      if (data.site_name) {
-        const n = document.getElementById('brandName');
-        if (n) n.textContent = data.site_name;
-      }
-      if (data.site_sub) {
-        const s = document.getElementById('brandSub');
-        if (s) s.textContent = data.site_sub;
-      }
-      if (data.video_url && video) {
-        video.src = data.video_url;
-        video.classList.add('has-src');
-        video.play().catch(() => {});
-      }
-      playlist = Array.isArray(data.music) ? data.music : [];
+  // Video sampul: taruh file di public/cover.mp4 (atau cover.webm)
+  if (video) {
+    const candidates = ['cover.mp4', 'cover.webm', 'cover.mov'];
+    let vi = 0;
+    const tryVideo = () => {
+      if (vi >= candidates.length) return;
+      video.src = candidates[vi++];
+      video.classList.add('has-src');
+      video.onerror = () => {
+        video.classList.remove('has-src');
+        tryVideo();
+      };
+      video.play().catch(() => {});
+    };
+    tryVideo();
+  }
+
+  // Playlist: edit public/playlist.json — file audio di public/music/ (nama bebas)
+  fetch(API_BASE + '/api/playlist')
+    .then((r) => (r.ok ? r.json() : []))
+    .then((list) => {
+      playlist = (Array.isArray(list) ? list : []).map((t) => ({
+        title: t.title || t.file || 'Track',
+        artist: t.artist || '',
+        url: t.url || t.file || '',
+      })).filter((t) => t.url);
       if (playlist.length) loadTrack(0);
     })
     .catch(() => {});

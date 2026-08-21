@@ -225,6 +225,28 @@ body::before {
   padding: 14px;
   border-top: 3px solid #000;
 }
+.btn-admin-login {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  background: #000;
+  color: #fff;
+  border: 2.5px solid #000;
+  font-weight: 700;
+  font-size: .85rem;
+  text-decoration: none;
+  box-shadow: 3px 3px 0 var(--cyan);
+  transition: .12s;
+}
+.btn-admin-login:hover {
+  background: var(--cyan);
+  color: #000;
+  box-shadow: 3px 3px 0 #000;
+}
+.nav-admin {
+  border-color: #000 !important;
+}
 .status-badge {
   display: flex; align-items: center; gap: 8px;
   font-size: .8rem; font-weight: 700; color: var(--green);
