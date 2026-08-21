@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Benimaru API — REST API Downloader Media Sosial Gratis</title>
+  <meta name="description" content="Benimaru API — REST API cepat & gratis untuk unduh TikTok, Instagram, YouTube, Facebook, Pinterest, dan lainnya. UI Neo-brutalism oleh Omstiff404." />
+  <meta name="keywords" content="benimaru api, tiktok downloader, instagram downloader, youtube downloader, facebook downloader, pinterest downloader, mediafire, terabox, rest api, free api, am prem, am verif" />
+  <meta name="author" content="Omstiff404" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="theme-color" content="#0a0a1a" />
+  <meta name="msapplication-TileColor" content="#0a0a1a" />
+  <meta name="msapplication-TileImage" content="og-image.jpg" />
+  <meta name="application-name" content="Benimaru API" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Benimaru API" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <link rel="canonical" href="https://www.omstiff404.web.id/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="id_ID" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:site_name" content="Benimaru API" />
+  <meta property="og:title" content="Benimaru API — Downloader Media Sosial Gratis" />
+  <meta property="og:description" content="REST API cepat & gratis untuk TikTok, Instagram, YouTube, Facebook, Pinterest, dan lainnya. Termasuk AM Prem & Verif." />
+  <meta property="og:url" content="https://www.omstiff404.web.id/" />
+  <meta property="og:image" content="https://www.omstiff404.web.id/og-image.jpg" />
+  <meta property="og:image:secure_url" content="https://www.omstiff404.web.id/og-image.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:alt" content="Benimaru API — karakter masker O/X dengan kota neon" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Benimaru API — Downloader Media Sosial Gratis" />
+  <meta name="twitter:description" content="REST API cepat & gratis untuk TikTok, IG, YT, FB, Pinterest, dan lainnya." />
+  <meta name="twitter:image" content="https://www.omstiff404.web.id/og-image.jpg" />
+  <meta name="twitter:image:alt" content="Benimaru API — karakter masker O/X dengan kota neon" />
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/jpeg" href="og-image.jpg" />
+  <link rel="apple-touch-icon" href="og-image.jpg" />
+  <link rel="shortcut icon" href="og-image.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Overlay for mobile sidebar -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <img src="avatar.jpg" alt="Benimaru" class="sidebar-avatar" id="profileAvatar" />
+      <div class="sidebar-brand">
+        <span class="brand-name" id="brandName">Benimaru</span>
+        <span class="brand-sub" id="brandSub">API</span>
+      </div>
+      <button class="close-btn" id="closeSidebar" aria-label="Close menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="#home" class="nav-item active" data-page="home">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        <span>Beranda</span>
+      </a>
+      <a href="#api" class="nav-item" data-page="api">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+        </svg>
+        <span>REST API</span>
+      </a>
+      <a href="#support" class="nav-item" data-page="support">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+        <span>Dukungan</span>
+      </a>
+</nav>
+
+    <div class="sidebar-footer">
+<div class="status-badge">
+        <span class="status-dot"></span>
+        <span>API Online</span>
+      </div>
+      <p class="version">v2.5.0 • oleh Omstiff404</p>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <div class="main-wrapper">
+    <!-- Top Bar -->
+    <header class="topbar">
+      <button class="burger" id="burger" aria-label="Open menu">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+      <div class="topbar-title">
+        <span id="pageTitle">Beranda</span>
+      </div>
+      <div class="topbar-actions">
+        <button class="theme-btn" id="themeBtn" title="Toggle theme">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Pages -->
+    <main class="content">
+      <!-- PAGE 1: HOME -->
+      <section id="home" class="page active">
+        <!-- Sampul video + music player di beranda -->
+        <div class="home-stage" id="homeStage">
+          <div class="home-cover">
+            <div class="home-cover-fallback"></div>
+            <video id="profileVideo" class="home-video" muted loop playsinline autoplay preload="auto"></video>
+          </div>
+          <div class="home-stage-content">
+            <div class="hero-avatar-wrap">
+              <img src="avatar.jpg" alt="Benimaru Avatar" class="hero-avatar" />
+              <div class="avatar-ring"></div>
+            </div>
+            <h1 class="hero-title home-title">Benimaru <span>API</span></h1>
+            <p class="hero-desc home-desc">Cepat • Gratis • Andal — REST API untuk mengunduh media dari platform populer.</p>
+            <div class="music-player home-music" id="musicPlayer">
+              <canvas id="spectrum" class="spectrum-canvas" width="640" height="48"></canvas>
+              <div class="music-meta">
+                <span class="music-title" id="musicTitle">Tidak ada lagu</span>
+                <span class="music-artist" id="musicArtist">—</span>
+              </div>
+              <div class="music-controls">
+                <button type="button" id="musicPrev" title="Sebelumnya" aria-label="Prev">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+                </button>
+                <button type="button" id="musicPlay" title="Play/Pause" aria-label="Play">
+                  <svg class="icon-play" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  <svg class="icon-pause" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+                </button>
+                <button type="button" id="musicNext" title="Berikutnya" aria-label="Next">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg>
+                </button>
+              </div>
+              <audio id="musicAudio" preload="metadata"></audio>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero hero-below">
+          
+          <div class="hero-stats">
+            <div class="stat-card">
+              <div class="stat-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                </svg>
+              </div>
+              <div class="stat-info">
+                <span class="stat-value" id="uptime">99.9%</span>
+                <span class="stat-label">Uptime</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div class="stat-info">
+                <span class="stat-value" id="latency">~120ms</span>
+                <span class="stat-label">Latensi</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                </svg>
+              </div>
+              <div class="stat-info">
+                <span class="stat-value">36+</span>
+                <span class="stat-label">Endpoint</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h2 class="section-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+            Fitur
+          </h2>
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon tiktok">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.12v-3.4a6.37 6.37 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.73a8.18 8.18 0 0 0 4.77 1.52V6.79a4.85 4.85 0 0 1-1.35-.1z"/></svg>
+              </div>
+              <h3>TikTok</h3>
+              <p>Tanpa watermark, HD quality</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon ig">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </div>
+              <h3>Instagram</h3>
+              <p>Reels, Posts, Stories</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon yt">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </div>
+              <h3>YouTube</h3>
+              <p>Video & Audio MP3</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon fb">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </div>
+              <h3>Facebook</h3>
+              <p>Videos & Reels</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon pin">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.217-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+              </div>
+              <h3>Pinterest</h3>
+              <p>Gambar & Video</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon mf">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+              </div>
+              <h3>MediaFire</h3>
+              <p>Link unduhan langsung</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon tb">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+              </div>
+              <h3>Terabox</h3>
+              <p>Link file & folder</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon more">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+              </div>
+              <h3>Lainnya Coming</h3>
+              <p>Twitter, Reddit, etc.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-block">
+          <h2 class="section-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+            Status
+          </h2>
+          <div class="status-panel">
+            <div class="status-row">
+              <span class="status-label">Status Server</span>
+              <span class="badge online">ONLINE</span>
+            </div>
+            <div class="status-row">
+              <span class="status-label">Terakhir dicek</span>
+              <span class="status-value" id="lastCheck">Baru saja</span>
+            </div>
+            <div class="status-row">
+              <span class="status-label">Total Request</span>
+              <span class="status-value" id="totalReq">12,847</span>
+            </div>
+            <div class="status-row">
+              <span class="status-label">Rate Limit</span>
+              <span class="status-value">60 req / min</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 2: REST API -->
+      
+      
+      
+      <section id="api" class="page">
+        <div class="page-header">
+          <h1>REST API</h1>
+          <p>Endpoint stabil · <code>/api/download/:name?url=</code></p>
+        </div>
+        
+        <div class="api-category open">
+          <div class="category-header">
+            <div class="category-icon downloader">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/></svg>
+            </div>
+            <div class="category-info"><h2>PENGUNDUH</h2><p>Unduh media sosial & audio</p></div>
+            <div class="category-meta"><span class="count-badge">9</span>
+              <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </div>
+          <div class="category-body">
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">AIO Otomatis</span>
+                <span class="ready-badge">SIAP</span>
+                <span class="platform-chip">Auto</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Deteksi platform otomatis dari URL.</p>
+                <div class="try-form"><div class="row">
+                  <input type="url" class="url-input" placeholder="https://vt.tiktok.com/..." />
+                  <button class="btn-download" data-platform="aio"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Unduh</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">TikTok</span>
+                <span class="ready-badge">SIAP</span>
+                <span class="platform-chip">TikTok</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Tanpa watermark.</p>
+                <div class="try-form"><div class="row">
+                  <input type="url" class="url-input" placeholder="https://vt.tiktok.com/..." />
+                  <button class="btn-download" data-platform="tiktok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Unduh</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Instagram</span>
+                <span class="ready-badge">SIAP</span>
+                <span class="platform-chip">Instagram</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Reels / postingan / carousel.</p>
+                <div class="try-form"><div class="row">
+                  <input type="url" class="url-input" placeholder="https://www.instagram.com/reel/..." />
+                  <button class="btn-download" data-platform="instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Unduh</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">YouTube</span>
+                <span class="ready-badge">SIAP</span>
+                <span class="platform-chip">YouTube</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Video & audio (yt-dlp).</p>
+                <div class="try-form"><div class="row">
+                  <input type="url" class="url-input" placeholder="https://youtube.com/watch?v=..." />
+                  <button class="btn-download" data-platform="youtube"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Unduh</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Facebook</span>
+                <span class="ready-badge">SIAP</span>
+                <span class="platform-chip">Facebook</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Video publik.</p>
+                <div class="try-form"><div class="row">
+                  <input type="url" class="url-input" placeholder="https://facebook.com/watch?v=..." />
+                  <button class="btn-download" data-platform="facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Unduh</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Twitter / X</span>
+                <span class="ready-badge">SIAP</span>
+                <span class="platform-chip">Twitter</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Video & foto.</p>
+                <div class="try-form"><div class="row">
+                  <input type="url" class="url-input" placeholder="https://x.com/user/status/..." />
+                  <button class="btn-download" data-platform="twitter"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Unduh</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Pinterest</span>
+                <span class="ready-badge">SIAP</span>
+                <span class="platform-chip">Pinterest</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Media pin.</p>
+                <div class="try-form"><div class="row">
+                  <input type="url" class="url-input" placeholder="https://pinterest.com/pin/..." />
+                  <button class="btn-download" data-platform="pinterest"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Unduh</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Reddit</span>
+                <span class="ready-badge">SIAP</span>
+                <span class="platform-chip">Reddit</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Media dari postingan.</p>
+                <div class="try-form"><div class="row">
+                  <input type="url" class="url-input" placeholder="https://reddit.com/r/..." />
+                  <button class="btn-download" data-platform="reddit"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Unduh</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">SoundCloud</span>
+                <span class="ready-badge">SIAP</span>
+                <span class="platform-chip">SoundCloud</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Trek audio.</p>
+                <div class="try-form"><div class="row">
+                  <input type="url" class="url-input" placeholder="https://soundcloud.com/..." />
+                  <button class="btn-download" data-platform="soundcloud"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Unduh</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div></div>
+        </div>
+        
+        <div class="api-category ">
+          <div class="category-header">
+            <div class="category-icon tools">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/></svg>
+            </div>
+            <div class="category-info"><h2>HIBURAN & ACAK</h2><p>Kutipan, lelucon, hewan, permainan</p></div>
+            <div class="category-meta"><span class="count-badge">24</span>
+              <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </div>
+          <div class="category-body">
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Kutipan</span>
+                <span class="ready-badge">SIAP</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Kutipan inspiratif acak.</p>
+                <div class="try-form"><div class="row">
+                  <button class="btn-download" data-platform="quote"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Ambil</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Lelucon</span>
+                <span class="ready-badge">SIAP</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Setup + punchline lelucon.</p>
+                <div class="try-form"><div class="row">
+                  <button class="btn-download" data-platform="joke"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Ambil</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Lelucon Ayah</span>
+                <span class="ready-badge">SIAP</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Lelucon khas ayah.</p>
+                <div class="try-form"><div class="row">
+                  <button class="btn-download" data-platform="dadjoke"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Ambil</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Chuck Norris</span>
+                <span class="ready-badge">SIAP</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Fakta Chuck Norris.</p>
+                <div class="try-form"><div class="row">
+                  <button class="btn-download" data-platform="chuck"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Ambil</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Fakta</span>
+                <span class="ready-badge">SIAP</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Fakta acak.</p>
+                <div class="try-form"><div class="row">
+                  <button class="btn-download" data-platform="fact"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Ambil</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Saran</span>
+                <span class="ready-badge">SIAP</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Saran acak.</p>
+                <div class="try-form"><div class="row">
+                  <button class="btn-download" data-platform="advice"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Ambil</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Afirmasi</span>
+                <span class="ready-badge">SIAP</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Afirmasi positif.</p>
+                <div class="try-form"><div class="row">
+                  <button class="btn-download" data-platform="affirmation"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Ambil</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Aktivitas</span>
+                <span class="ready-badge">SIAP</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Bosan? Dapatkan ide aktivitas.</p>
+                <div class="try-form"><div class="row">
+                  <button class="btn-download" data-platform="activity"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Ambil</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Ya / Tidak</span>
+                <span class="ready-badge">SIAP</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Jawaban Ya/Tidak + gif.</p>
+                <div class="try-form"><div class="row">
+                  <button class="btn-download" data-platform="yesno"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Ambil</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Kutipan Anime</span>
+                <span class="ready-badge">SIAP</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Kutipan anime acak.</p>
+                <div class="try-form"><div class="row">
+                  <button class="btn-download" data-platform="animequote"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Ambil</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Sindiran (fun)</span>
+                <span class="ready-badge">SIAP</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Generator sindiran (EN).</p>
+                <div class="try-form"><div class="row">
+                  <button class="btn-download" data-platform="insult"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Ambil</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Teks Mock</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Ubah teks jadi mOcK cAsE.</p>
+                <div class="try-form"><div class="row">
+                  <input type="text" class="url-input" placeholder="hello world" />
+                  <button class="btn-download" data-platform="mock"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Mock</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Fakta Angka</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Trivia tentang sebuah angka.</p>
+                <div class="try-form"><div class="row">
+                  <input type="text" class="url-input" placeholder="42" />
+                  <button class="btn-download" data-platform="numberfact"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Ambil</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Pokemon</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Data Pokemon.</p>
+                <div class="try-form"><div class="row">
+                  <input type="text" class="url-input" placeholder="pikachu" />
+                  <button class="btn-download" data-platform="pokemon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Cari</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Anjing</span>
+                <span class="ready-badge">SIAP</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Gambar anjing acak.</p>
+                <div class="try-form"><div class="row">
+                  <button class="btn-download" data-platform="dog"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Ambil</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Kucing</span>
+                <span class="ready-badge">SIAP</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Gambar kucing acak.</p>
+                <div class="try-form"><div class="row">
+                  <button class="btn-download" data-platform="cat"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Ambil</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Rubah</span>
+                <span class="ready-badge">SIAP</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Gambar rubah acak.</p>
+                <div class="try-form"><div class="row">
+                  <button class="btn-download" data-platform="fox"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Ambil</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Bebek</span>
+                <span class="ready-badge">SIAP</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Gambar bebek acak.</p>
+                <div class="try-form"><div class="row">
+                  <button class="btn-download" data-platform="duck"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Ambil</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Kopi</span>
+                <span class="ready-badge">SIAP</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Gambar kopi acak.</p>
+                <div class="try-form"><div class="row">
+                  <button class="btn-download" data-platform="coffee"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Ambil</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Waifu</span>
+                <span class="ready-badge">SIAP</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Gambar waifu (SFW).</p>
+                <div class="try-form"><div class="row">
+                  <button class="btn-download" data-platform="waifu"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Ambil</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Pengguna Acak</span>
+                <span class="ready-badge">SIAP</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Profil palsu acak.</p>
+                <div class="try-form"><div class="row">
+                  <button class="btn-download" data-platform="randomuser"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Ambil</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Prediksi Umur</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Prediksi umur dari nama.</p>
+                <div class="try-form"><div class="row">
+                  <input type="text" class="url-input" placeholder="alex" />
+                  <button class="btn-download" data-platform="agify"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Cek</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Prediksi Gender</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Prediksi gender dari nama.</p>
+                <div class="try-form"><div class="row">
+                  <input type="text" class="url-input" placeholder="alex" />
+                  <button class="btn-download" data-platform="genderize"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Cek</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Prediksi Negara</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Prediksi kewarganegaraan dari nama.</p>
+                <div class="try-form"><div class="row">
+                  <input type="text" class="url-input" placeholder="putri" />
+                  <button class="btn-download" data-platform="nationalize"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Cek</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div></div>
+        </div>
+        
+        <div class="api-category ">
+          <div class="category-header">
+            <div class="category-icon tools">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/></svg>
+            </div>
+            <div class="category-info"><h2>INFO & PENCARIAN</h2><p>Pencarian data</p></div>
+            <div class="category-meta"><span class="count-badge">8</span>
+              <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </div>
+          <div class="category-body">
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">GitHub</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Profil GitHub.</p>
+                <div class="try-form"><div class="row">
+                  <input type="text" class="url-input" placeholder="torvalds" />
+                  <button class="btn-download" data-platform="github"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Cari</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Kripto</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Harga koin USD/IDR.</p>
+                <div class="try-form"><div class="row">
+                  <input type="text" class="url-input" placeholder="bitcoin" />
+                  <button class="btn-download" data-platform="crypto"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Cek</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Cuaca</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Cuaca kota (wttr.in).</p>
+                <div class="try-form"><div class="row">
+                  <input type="text" class="url-input" placeholder="Jakarta" />
+                  <button class="btn-download" data-platform="weather"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Cek</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Negara</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Informasi negara.</p>
+                <div class="try-form"><div class="row">
+                  <input type="text" class="url-input" placeholder="Indonesia" />
+                  <button class="btn-download" data-platform="country"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Cari</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Universitas</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Daftar kampus per negara.</p>
+                <div class="try-form"><div class="row">
+                  <input type="text" class="url-input" placeholder="Indonesia" />
+                  <button class="btn-download" data-platform="universities"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Cari</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Kamus</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Definisi kata (bahasa Inggris).</p>
+                <div class="try-form"><div class="row">
+                  <input type="text" class="url-input" placeholder="serendipity" />
+                  <button class="btn-download" data-platform="dictionary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Cari</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Paket NPM</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Info paket npm.</p>
+                <div class="try-form"><div class="row">
+                  <input type="text" class="url-input" placeholder="express" />
+                  <button class="btn-download" data-platform="npm"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Cari</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">DNS / Whois</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Lookup DNS domain.</p>
+                <div class="try-form"><div class="row">
+                  <input type="text" class="url-input" placeholder="google.com" />
+                  <button class="btn-download" data-platform="whois"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Lookup</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div></div>
+        </div>
+        
+        <div class="api-category ">
+          <div class="category-header">
+            <div class="category-icon tools">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/></svg>
+            </div>
+            <div class="category-info"><h2>UTILITAS</h2><p>Alat bantu & generator</p></div>
+            <div class="category-meta"><span class="count-badge">16</span>
+              <svg class="chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+          </div>
+          <div class="category-body">
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">IP Geo</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Lookup IP atau domain.</p>
+                <div class="try-form"><div class="row">
+                  <input type="text" class="url-input" placeholder="8.8.8.8" />
+                  <button class="btn-download" data-platform="ip"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Lookup</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Screenshot</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Pratinjau screenshot website.</p>
+                <div class="try-form"><div class="row">
+                  <input type="url" class="url-input" placeholder="https://example.com" />
+                  <button class="btn-download" data-platform="screenshot"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Ambil</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Perpendek URL</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Perpendek URL (tinyurl).</p>
+                <div class="try-form"><div class="row">
+                  <input type="url" class="url-input" placeholder="https://example.com/long" />
+                  <button class="btn-download" data-platform="shorten"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Perpendek</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Kode QR</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Buat kode QR.</p>
+                <div class="try-form"><div class="row">
+                  <input type="text" class="url-input" placeholder="https://benimaru.local" />
+                  <button class="btn-download" data-platform="qr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Buat</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Base64</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Encode teks ke Base64.</p>
+                <div class="try-form"><div class="row">
+                  <input type="text" class="url-input" placeholder="hello" />
+                  <button class="btn-download" data-platform="base64"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Encode</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">UUID</span>
+                <span class="ready-badge">SIAP</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Buat UUID v4 acak.</p>
+                <div class="try-form"><div class="row">
+                  <button class="btn-download" data-platform="uuid"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Ambil</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Password</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Buat password aman.</p>
+                <div class="try-form"><div class="row">
+                  <input type="text" class="url-input" placeholder="16" />
+                  <button class="btn-download" data-platform="password"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Buat</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">SHA-256</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Hash teks SHA-256.</p>
+                <div class="try-form"><div class="row">
+                  <input type="text" class="url-input" placeholder="secret" />
+                  <button class="btn-download" data-platform="hash"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Hash</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Warna</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Hex → RGB (kosong = acak).</p>
+                <div class="try-form"><div class="row">
+                  <input type="text" class="url-input" placeholder="ff2d95" />
+                  <button class="btn-download" data-platform="color"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Konversi</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Timestamp</span>
+                <span class="ready-badge">SIAP</span>
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Timestamp Unix & ISO sekarang.</p>
+                <div class="try-form"><div class="row">
+                  <button class="btn-download" data-platform="timestamp"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Ambil</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Morse</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Encode ke kode Morse.</p>
+                <div class="try-form"><div class="row">
+                  <input type="text" class="url-input" placeholder="SOS" />
+                  <button class="btn-download" data-platform="morse"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Encode</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Balik Teks</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Balik urutan teks.</p>
+                <div class="try-form"><div class="row">
+                  <input type="text" class="url-input" placeholder="benimaru" />
+                  <button class="btn-download" data-platform="reverse"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Balik</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Hitung Kata</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Hitung karakter & kata.</p>
+                <div class="try-form"><div class="row">
+                  <input type="text" class="url-input" placeholder="hello world" />
+                  <button class="btn-download" data-platform="count"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Hitung</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">Lorem</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Buat paragraf lorem.</p>
+                <div class="try-form"><div class="row">
+                  <input type="text" class="url-input" placeholder="2" />
+                  <button class="btn-download" data-platform="lorem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Buat</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">AM Prem</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Kirim request AM Premium ke email.</p>
+                <div class="try-form"><div class="row">
+                  <input type="email" class="url-input" placeholder="email@gmail.com" />
+                  <button class="btn-download" data-platform="amprem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Kirim</button>
+                </div></div>
+                <div class="result-box"></div>
+              </div>
+            </div>
+            <div class="endpoint-item">
+              <div class="endpoint-toggle">
+                <span class="method-tag">GET</span>
+                <span class="endpoint-name">AM Verif</span>
+                <span class="ready-badge">SIAP</span>
+                
+                <svg class="endpoint-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+              </div>
+              <div class="endpoint-detail">
+                <p class="endpoint-desc">Verifikasi AM — isi email + link verifikasi.</p>
+                <div class="try-form">
+                  <div class="row" style="margin-bottom:8px">
+                    <input type="email" class="url-input am-email" placeholder="Email: user@gmail.com" />
+                  </div>
+                  <div class="row">
+                    <input type="url" class="url-input am-link" placeholder="Link verifikasi: https://..." />
+                    <button class="btn-download" data-platform="amverif"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Verif</button>
+                  </div>
+                </div>
+                <div class="result-box"></div>
+              </div>
+            </div></div>
+        </div>
+        <div class="docs-box">
+          <h3>Contoh</h3>
+          <pre><code>GET /api/download/tiktok?url=...
+GET /api/download/weather?url=Jakarta
+GET /api/download/dadjoke
+GET /api/download/qr?url=hello
+GET /api/amprem?email=user@gmail.com
+GET /api/amverif?email=user@gmail.com&amp;link=https://...
+GET /api/endpoints</code></pre>
+        </div>
+      </section>
+
+      <section id="support" class="page">
+        <div class="page-header">
+          <h1>Dukungan & Kontak</h1>
+          <p>Ikuti, bagikan, dan dukung developer</p>
+        </div>
+
+        <div class="support-actions">
+          <div class="support-action">
+            <h4>⭐ Star / Bagikan</h4>
+            <p>Bantu sebarkan Benimaru API</p>
+            <a class="btn-action" href="https://tiktok.com/@omstiff404" target="_blank" rel="noopener">Bagikan</a>
+          </div>
+          <div class="support-action">
+            <h4>💬 Masukan</h4>
+            <p>Saran & laporan bug via Telegram</p>
+            <a class="btn-action" href="https://t.me/Omstiff404" target="_blank" rel="noopener">Chat</a>
+          </div>
+        </div>
+
+        <div class="support-grid">
+          <a href="https://tiktok.com/@omstiff404" target="_blank" rel="noopener" class="social-card tiktok">
+            <div class="social-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.12v-3.4a6.37 6.37 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.73a8.18 8.18 0 0 0 4.77 1.52V6.79a4.85 4.85 0 0 1-1.35-.1z"/></svg>
+            </div>
+            <div class="social-info">
+              <h3>TikTok</h3>
+              <p>@omstiff404 — Ikuti untuk update</p>
+            </div>
+            <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+
+          <a href="https://t.me/Omstiff404" target="_blank" rel="noopener" class="social-card telegram">
+            <div class="social-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            </div>
+            <div class="social-info">
+              <h3>Telegram</h3>
+              <p>@Omstiff404 — Chat & dukungan</p>
+            </div>
+            <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+
+          <a href="https://YouTube.com/omstiff404" target="_blank" rel="noopener" class="social-card youtube">
+            <div class="social-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </div>
+            <div class="social-info">
+              <h3>YouTube</h3>
+              <p>omstiff404 — Tutorial & konten</p>
+            </div>
+            <svg class="arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="support-note">
+          <h3>Tentang Developer</h3>
+          <p>Hai! Saya <strong>Omstiff404</strong>. Benimaru API dibuat untuk edukasi & personal use. Kalau bermanfaat, follow media sosial di atas ya.</p>
+          <p class="disclaimer">⚠️ Gunakan dengan bijak. Hormati ToS setiap platform. Developer tidak bertanggung jawab atas penyalahgunaan.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 Benimaru API • Dibuat dengan 💜 oleh Omstiff404</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
